@@ -28,3 +28,9 @@ resource "aws_instance" "app" {
 
   tags = var.tags
 }
+
+module "s3_bucket" {
+  source  = "app.terraform.io/policy-as-code-training/s3-bucket-tlaksh/aws"
+  version = "1.0.0"
+  bucket_name = "my-tlaksh-bucket"
+}
